@@ -62,25 +62,25 @@ aliases: [www.acme.tld]
 stack: wordpress # wordpress|php|node|python|cfml|static|custom
 size: small # small|medium|large (maps to cgroup quotas)
 components:
--- db: mariadb # mariadb|postgres|sqlite|none
--- engine: lucee # lucee|adobe (for cfml)
--- runtime: native # native|container
+ db: mariadb # mariadb|postgres|sqlite|none
+ engine: lucee # lucee|adobe (for cfml)
+ runtime: native # native|container
 env:
--- WP_ENV: production
--- DB_NAME: acme
--- DB_USER: acme
--- DB_PASS: ${SECRET_DB_PASS}
--- DB_HOST: db
--- storage:
--- app: 10Gi
--- db: 20Gi
+ WP_ENV: production
+ DB_NAME: acme
+ DB_USER: acme
+ DB_PASS: ${SECRET_DB_PASS}
+ DB_HOST: db
+ storage:
+ app: 10Gi
+ db: 20Gi
 backups:
--- s3:
--- endpoint: https://s3.contabo.com
--- bucket: copilot-backups
--- prefix: acme-001
--- access_key: ${S3_KEY}
--- secret_key: ${S3_SECRET}
+ s3:
+ endpoint: https://s3.contabo.com
+ bucket: copilot-backups
+ prefix: acme-001
+ access_key: ${S3_KEY}
+ secret_key: ${S3_SECRET}
 ```
 
 ## Web UI / UX
